@@ -3,6 +3,7 @@ var GameState = {
 	// load the game assets before game starts
 	preload: function() {
 		this.load.image('background', 'assets/images/background.png');
+		this.load.image('arrow', 'assets/images/arrow.png');
 		this.load.image('chicken', 'assets/images/chicken.png');
 		this.load.image('horse', 'assets/images/horse.png');
 		this.load.image('pig', 'assets/images/pig.png');
