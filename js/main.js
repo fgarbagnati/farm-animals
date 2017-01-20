@@ -19,11 +19,30 @@ var GameState = {
 
 		this.background = this.game.add.sprite(0, 0, 'background');
 
-		this.pig = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'pig');
-		this.pig.anchor.setTo(0.5);
-		this.pig.inputEnabled = true;
-		this.pig.input.pixelPerfectClick = true;
-		this.pig.events.onInputDown.add(this.animateAnimal, this);
+		var animalData = [
+			{key: 'chicken', text: 'CHICKEN'},
+			{key: 'horse', text: 'HORSE'},
+			{key: 'pig', text: 'PIG'},
+			{key: 'sheep', text: 'SHEEP'},
+		];
+
+		this.animals = this.game.add.group();
+
+		var self = this;
+		var animal;
+		animalData.forEach(function(element) {
+			animal = self.animals.create(-1000, this.game.world.centerY, element.key);
+
+			animal.customParams = {text: element.text};
+			animal.anchor.setTo(0.5);
+
+			animal.inputEnabled = true;
+			animal.input.pixelPerfectClick = true;
+			animal.events.onInputDown.add(self.animateAnimal, self);
+		});
+
+		this.currentAnimal = this.animals.next();
+		this.currentAnimal.position.set(this.game.world.centerX, this.game.world.centerY);
 
 		this.rightArrow = this.game.add.sprite(580, this.game.world.centerY, 'arrow');
 		this.rightArrow.anchor.setTo(0.5);
