@@ -11,6 +11,7 @@ var GameState = {
 	},
 	// executed after everything is loaded
 	create: function() {
+		// fits game to screen with aspect ratio, centers game screen
 		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 		this.scale.pageAlignHorizontally = true;
 		this.scale.pageAlignVertically = true;
