@@ -21,6 +21,9 @@ var GameState = {
 
 		this.pig = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'pig');
 		this.pig.anchor.setTo(0.5);
+		this.pig.inputEnabled = true;
+		this.pig.input.pixelPerfectClick = true;
+		this.pig.events.onInputDown.add(this.animateAnimal, this);
 
 		this.rightArrow = this.game.add.sprite(580, this.game.world.centerY, 'arrow');
 		this.rightArrow.anchor.setTo(0.5);
@@ -46,6 +49,9 @@ var GameState = {
 	},
 	switchAnimal: function(sprite, event) {
 		console.log('move animal');
+	},
+	animateAnimal: function(sprite, event) {
+		console.log('animate animal');
 	}
 };
 
