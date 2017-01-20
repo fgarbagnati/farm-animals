@@ -67,7 +67,6 @@ var GameState = {
 
 	},
 	switchAnimal: function(sprite, event) {
-		console.log('switch');
 		var newAnimal, endX;
 
 		if(sprite.customParams.direction > 0) {
@@ -79,6 +78,9 @@ var GameState = {
 		}
 
 		this.currentAnimal.x = endX; 
+
+		newAnimal.x = this.game.world.centerX;
+		this.currentAnimal = newAnimal;
 		// get direction of arrow
 
 		// get next animal
