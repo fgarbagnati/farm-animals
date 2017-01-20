@@ -3,6 +3,7 @@ var GameState = {
 	// load the game assets before game starts
 	preload: function() {
 		this.load.image('background', 'assets/images/background.png');
+		this.load.image('arrow', 'assets/images/arrow.png');
 		this.load.image('chicken', 'assets/images/chicken.png');
 		this.load.image('horse', 'assets/images/horse.png');
 		this.load.image('pig', 'assets/images/pig.png');
@@ -18,28 +19,39 @@ var GameState = {
 
 		this.background = this.game.add.sprite(0, 0, 'background');
 
-		this.chicken = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'chicken');
-		this.chicken.anchor.setTo(0.5, 0.5); // note -- since both values in setTo() are the same, can be written just once, as on line 28
-
-		this.horse = this.game.add.sprite(120, 10, 'horse');
-		// changes size of horse img
-		this.horse.scale.setTo(0.5);
-
-		this.pig = this.game.add.sprite(500, 300, 'pig');
+		this.pig = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'pig');
 		this.pig.anchor.setTo(0.5);
-		// flipping on x: (-1, 1)
-		// flipping on y: (1, -1)
-		// changing val of numbers changes scale
-		this.pig.scale.setTo(-1, 1);
+		this.pig.inputEnabled = true;
+		this.pig.input.pixelPerfectClick = true;
+		this.pig.events.onInputDown.add(this.animateAnimal, this);
 
-		this.sheep = this.game.add.sprite(100, 250, 'sheep');
-		this.sheep.scale.setTo(0.5);
-		this.sheep.anchor.setTo(0.5);
-		this.sheep.angle = -45
-	},
+		this.rightArrow = this.game.add.sprite(580, this.game.world.centerY, 'arrow');
+		this.rightArrow.anchor.setTo(0.5);
+		this.rightArrow.customParams = {direction: 1};
+		// right arrow allow user input
+		this.rightArrow.inputEnabled = true;
+		this.rightArrow.input.pixelPerfectClick = true;
+		this.rightArrow.events.onInputDown.add(this.switchAnimal, this);
+
+		this.leftArrow = this.game.add.sprite(60, this.game.world.centerY, 'arrow');
+		this.leftArrow.anchor.setTo(0.5);
+		this.leftArrow.scale.x = -1;
+		this.leftArrow.customParams = {direction: -1};
+		// left arrow allow user input
+		this.leftArrow.inputEnabled = true;
+		this.leftArrow.input.pixelPerfectClick = true;
+		this.leftArrow.events.onInputDown.add(this.switchAnimal, this);
+
+	}, 
 	// executed multiple times per second
 	update: function() {
-		this.sheep.angle += 0.5;
+
+	},
+	switchAnimal: function(sprite, event) {
+		console.log('move animal');
+	},
+	animateAnimal: function(sprite, event) {
+		console.log('animate animal');
 	}
 };
 
