@@ -31,10 +31,15 @@ var GameState = {
 		// flipping on y: (1, -1)
 		// changing val of numbers changes scale
 		this.pig.scale.setTo(-1, 1);
+
+		this.sheep = this.game.add.sprite(100, 250, 'sheep');
+		this.sheep.scale.setTo(0.5);
+		this.sheep.anchor.setTo(0.5);
+		this.sheep.angle = -45
 	},
 	// executed multiple times per second
 	update: function() {
-
+		this.sheep.angle += 0.5;
 	}
 };
 
