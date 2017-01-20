@@ -11,6 +11,10 @@ var GameState = {
 	},
 	// executed after everything is loaded
 	create: function() {
+		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+		this.scale.pageAlignHorizontally = true;
+		this.scale.pageAlignVertically = true;
+
 		this.background = this.game.add.sprite(0, 0, 'background');
 
 		this.chicken = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'chicken');
