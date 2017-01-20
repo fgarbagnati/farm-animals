@@ -15,6 +15,9 @@ var GameState = {
 
 		this.chicken = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'chicken');
 		this.chicken.anchor.setTo(0.5, 0.5);
+
+		this.horse = this.game.add.sprite(120, 10, 'horse');
+		this.horse.scale.setTo(0.5);
 	},
 	// executed multiple times per second
 	update: function() {
