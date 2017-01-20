@@ -19,10 +19,14 @@ var GameState = {
 		this.background = this.game.add.sprite(0, 0, 'background');
 
 		this.chicken = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'chicken');
-		this.chicken.anchor.setTo(0.5, 0.5);
+		this.chicken.anchor.setTo(0.5, 0.5); // note -- since both values in setTo() are the same, can be written just once, as on line 28
 
 		this.horse = this.game.add.sprite(120, 10, 'horse');
 		this.horse.scale.setTo(0.5);
+
+		this.pig = this.game.add.sprite(500, 300, 'pig');
+		this.pig.anchor.setTo(0.5);
+		this.pig.scale.setTo(-1, 1);
 	},
 	// executed multiple times per second
 	update: function() {
