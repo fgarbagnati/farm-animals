@@ -7,11 +7,14 @@ var GameState = {
 		this.load.image('horse', 'assets/images/horse.png');
 		this.load.image('pig', 'assets/images/pig.png');
 		this.load.image('sheep', 'assets/images/sheep3.png');
-		
+
 	},
 	// executed after everything is loaded
 	create: function() {
 		this.background = this.game.add.sprite(0, 0, 'background');
+
+		this.chicken = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'chicken');
+		this.chicken.anchor.setTo(0.5, 0.5);
 	},
 	// executed multiple times per second
 	update: function() {
