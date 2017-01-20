@@ -80,16 +80,7 @@ var GameState = {
 		this.currentAnimal.x = endX; 
 
 		newAnimal.x = this.game.world.centerX;
-		this.currentAnimal = newAnimal;
-		// get direction of arrow
-
-		// get next animal
-
-		// get final destination of current animal
-
-		// move current animal to final destination
-
-		// set the next animal as the new current animal
+		this.currentAnimal = newAnimal; 
 	},
 	animateAnimal: function(sprite, event) {
 		console.log('animate animal');
