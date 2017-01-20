@@ -4,10 +4,11 @@ var GameState = {
 	preload: function() {
 		this.load.image('background', 'assets/images/background.png');
 		this.load.image('arrow', 'assets/images/arrow.png');
-		this.load.image('chicken', 'assets/images/chicken.png');
-		this.load.image('horse', 'assets/images/horse.png');
-		this.load.image('pig', 'assets/images/pig.png');
-		this.load.image('sheep', 'assets/images/sheep3.png');
+
+		this.load.spritesheet('chicken', 'assets/images/chicken_spritesheet.png');
+		this.load.spritesheet('horse', 'assets/images/horse_spritesheet.png');
+		this.load.spritesheet('pig', 'assets/images/pig_spritesheet.png');
+		this.load.spritesheet('sheep', 'assets/images/sheep_spritesheet.png');
 
 	},
 	// executed after everything is loaded
