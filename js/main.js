@@ -19,7 +19,19 @@ var GameState = {
 
 		this.background = this.game.add.sprite(0, 0, 'background');
 
-		
+		var animalData = [
+			{key: 'chicken', text: 'CHICKEN'},
+			{key: 'horse', text: 'HORSE'},
+			{key: 'pig', text: 'PIG'},
+			{key: 'sheep', text: 'SHEEP'},
+		];
+
+		this.animals = this.game.add.group();
+
+		var self = this;
+		animalData.forEach(function(element) {
+			self.animals.create(200, this.game.world.centerY, element.key);
+		});
 
 		this.rightArrow = this.game.add.sprite(580, this.game.world.centerY, 'arrow');
 		this.rightArrow.anchor.setTo(0.5);
