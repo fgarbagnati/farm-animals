@@ -67,7 +67,15 @@ var GameState = {
 
 	},
 	switchAnimal: function(sprite, event) {
-		console.log('move animal');
+		// get direction of arrow
+
+		// get next animal
+
+		// get final destination of current animal
+
+		// move current animal to final destination
+
+		// set the next animal as the new current animal
 	},
 	animateAnimal: function(sprite, event) {
 		console.log('animate animal');
