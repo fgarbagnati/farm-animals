@@ -67,7 +67,6 @@ var GameState = {
 
 	},
 	switchAnimal: function(sprite, event) {
-		console.log('why');
 		if(this.isMoving) {
 			return false;
 		}
