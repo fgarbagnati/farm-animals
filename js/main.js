@@ -25,10 +25,10 @@ var GameState = {
 		this.background = this.game.add.sprite(0, 0, 'background');
 
 		var animalData = [
-			{key: 'chicken', text: 'CHICKEN'},
-			{key: 'horse', text: 'HORSE'},
-			{key: 'pig', text: 'PIG'},
-			{key: 'sheep', text: 'SHEEP'},
+			{key: 'chicken', text: 'CHICKEN', audio: 'chickenSound'},
+			{key: 'horse', text: 'HORSE', audio: 'horseSound'},
+			{key: 'pig', text: 'PIG', audio: 'pigSound'},
+			{key: 'sheep', text: 'SHEEP', audio: 'sheepSound'},
 		];
 
 		this.animals = this.game.add.group();
