@@ -38,7 +38,7 @@ var GameState = {
 		animalData.forEach(function(element) {
 			animal = self.animals.create(-1000, this.game.world.centerY, element.key, 0);
 
-			animal.customParams = {text: element.text};
+			animal.customParams = {text: element.text, sound: self.game.add.audio(element.audio)};
 			animal.anchor.setTo(0.5);
 
 			animal.animations.add('animate', [0, 1, 2, 1, 0, 1], 3, false);
@@ -106,6 +106,7 @@ var GameState = {
 	},
 	animateAnimal: function(sprite, event) {
 		sprite.play('animate');
+		sprite.customParams.sound.play();
 	}
 };
 
