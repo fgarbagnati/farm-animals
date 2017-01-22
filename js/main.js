@@ -115,7 +115,12 @@ var GameState = {
 	},
 	showText: function(animal) {
 		if(!this.animalText) {
-			this.animalText = this.game.add.text(this.game.width/2, this.game.height * 0.85, '');
+			var style = {
+				font: 'bold 30pt Arial',
+				fill: '#D0171B',
+				align: 'center'
+			}
+			this.animalText = this.game.add.text(this.game.width/2, this.game.height * 0.85, '', style);
 			this.animalText.anchor.setTo(0.5);
 		}
 		this.animalText.setText(animal.customParams.text);
